@@ -8,7 +8,6 @@ stages:
   - build and publish
   - deploy
   - migrate
-if: tag IS blank
 
 jobs:
   include:
