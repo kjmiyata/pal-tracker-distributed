@@ -31,12 +31,12 @@ public class UserDataGatewayTest {
         UserRecord createdUser = gateway.create("aUser");
 
 
-        assertThat(createdUser.id).isGreaterThan(0);
-        assertThat(createdUser.name).isEqualTo("aUser");
+        assertThat(createdUser.getId()).isGreaterThan(0);
+        assertThat(createdUser.getName()).isEqualTo("aUser");
 
-        Map<String, Object> persistedFields = template.queryForMap("SELECT id, name FROM users WHERE id = ?", createdUser.id);
-        assertThat(persistedFields.get("id")).isEqualTo(createdUser.id);
-        assertThat(persistedFields.get("name")).isEqualTo(createdUser.name);
+        Map<String, Object> persistedFields = template.queryForMap("SELECT id, name FROM users WHERE id = ?", createdUser.getId());
+        assertThat(persistedFields.get("id")).isEqualTo(createdUser.getId());
+        assertThat(persistedFields.get("name")).isEqualTo(createdUser.getName());
     }
 
     @Test

@@ -26,6 +26,6 @@ public class UserController {
             return null;
         }
 
-        return new UserInfo(record.id, record.name, "user info");
+        return new UserInfo(record.getId(), record.getName(), "user info");
     }
 }

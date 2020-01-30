@@ -20,7 +20,7 @@ public class RegistrationService {
     @Transactional
     public UserRecord createUserWithAccount(String name) {
         UserRecord user = userDataGateway.create(name);
-        accountDataGateway.create(user.id, String.format("%s's account", name));
+        accountDataGateway.create(user.getId(), String.format("%s's account", name));
         return user;
     }
 }
